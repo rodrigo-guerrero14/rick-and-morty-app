@@ -18,14 +18,15 @@ export default function Search(){
 
   return (
     <section className="searcher">
-      <h2>Searcher</h2>
+        
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="">ID</label>
-        <input type="text"onChange={handleChange} placeholder="Ejemplo: 1"/>
+        <input type="text"onChange={handleChange} placeholder="Búsqueda por IDs, 1 - 900"/>
         <button>Buscar</button>
       </form>
-
-      <Character data={char}></Character>
+      
+      {char.name === undefined || char.name === ""
+      ? null
+      : <Character data={char}></Character>}
     </section>
   )
 }
