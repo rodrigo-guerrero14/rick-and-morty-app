@@ -134,9 +134,10 @@
 .searcher{
   display: grid;
   grid-template-rows: 130px 1fr;
+  grid-template-columns: .45fr 1fr;
   margin: auto;
   margin-top: 16px;
-  max-width: 1440px;
+  max-width: 1200px;
   justify-content: center;
 }
 
@@ -155,6 +156,22 @@
   display: inline-block;
   outline: none;
   padding: 8px 16px;
+}
+
+.searcher .character {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 650px;
+}
+
+.notFound img{
+  width: 400px;  
+}
+
+@media screen and (max-width:1200px){
+  .searcher{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -192,5 +209,26 @@
 
   .charactersList .buttonsContainer{
     grid-column: span 1;
+  }
+
+  .searcher{
+    width: 100%;
+    grid-template-columns: .25fr .5fr;
+    grid-template-rows: 1fr;
+    column-gap: 16px;
+  }
+
+  .searcher .character{
+    min-width: 350px;
+    justify-self: start;
+  }
+
+  .searcher form input{
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .searcher form button{
+    width: 100%;
   }
 }

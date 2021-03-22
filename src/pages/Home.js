@@ -1,4 +1,4 @@
-import logo from '../rick_and_morty_logo.png'
+import logo from '../img/rick_and_morty_logo.png'
 
 export default function Home(){
     return (

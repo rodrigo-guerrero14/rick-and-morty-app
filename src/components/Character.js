@@ -1,13 +1,18 @@
-export default function Character({data}){
-  const {name, id, status, image, gender, created, origin} = data
-  const locationName = origin.name
+export default function Character({data}){  
+
+  if(data.name === undefined){
+    return null
     
+  }else{
+
+    const {name, id, status, image, gender, created, origin} = data
+    const locationName = origin.name
+
     return(
       <article key={id} className="character">
         <div className="background-name">{name}</div>
-        <h3>{name}</h3>
-        <img src={image} alt={`${name} pic`}/>
-
+          <h3>{name}</h3>
+          <img src={image} alt={`${name} pic`}/>
         <div className="details">
           <p><span>Status: </span>{status}</p>
           <p><span>Gender: </span>{gender}</p>
@@ -16,5 +21,5 @@ export default function Character({data}){
         </div>
       </article>
     )
-
+  }
 }

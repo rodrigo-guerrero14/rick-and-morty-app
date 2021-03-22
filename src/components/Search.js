@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import getCharacter from '../services/getCharacter'
 import Character from './Character'
+import NotFound from './NotFound'
 
 export default function Search(){
   const [keyword, setKeyword] = useState("")
@@ -23,9 +24,9 @@ export default function Search(){
         <input type="text"onChange={handleChange} placeholder="Búsqueda por IDs, 1 - 900"/>
         <button>Buscar</button>
       </form>
-      
-      {char.name === undefined || char.name === ""
-      ? null
+
+      { char.error
+      ? <NotFound></NotFound>
       : <Character data={char}></Character>}
     </section>
   )
